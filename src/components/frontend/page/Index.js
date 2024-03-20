@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
 export default function Index() {
   return (
     <>
@@ -30,6 +33,7 @@ export default function Index() {
               <li className="nav-item">
                 <Link className="nav-link" to={'/admin'}>Admin</Link>
               </li>
+<<<<<<< HEAD
 
               <li className="nav-item">
                 <Link className="nav-link" to={'/register'}>Register</Link>
@@ -42,6 +46,8 @@ export default function Index() {
 
 
 
+=======
+>>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
             </ul>
           </div>
         </div>

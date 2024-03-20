@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+=======
+import { Routes, Route ,BrowserRouter } from 'react-router-dom';
+>>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
 
 
 // Frontend page elements
@@ -9,6 +13,7 @@ import FrontendAbout from './components/frontend/page/About';
 
 
 //Admin page elements
+<<<<<<< HEAD
 import Error from './components/Error';
 import BackendLayout from "./components/backend/layouts/BackendLayout";
 import BackendAdmin from './components/backend/page/Admin';
@@ -20,16 +25,28 @@ import RegistrationForm from './components/backend/auth/Registration';
 import Login from './components/backend/auth/Login'
 import Logout from './components/backend/auth/Logout';
 import { useIsAuthenticated } from './components/backend/auth/authCheck';
+=======
+import BackendLayout from "./components/backend/BackendLayout";
+import BackendAdmin from './components/backend/page/Admin';
+import BackendSetting from './components/backend/page/Settings';
+
+
+import Error from './components/Error';
+>>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
 
 
 
 
 function App() {
+<<<<<<< HEAD
   const isLoggedIn = useIsAuthenticated();
   console.log(isLoggedIn);
 
 
   return (
+=======
+  return(
+>>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
     <>
       <BrowserRouter>
 
@@ -38,6 +55,7 @@ function App() {
 
           {/* // Frontend page Routes */}
 
+<<<<<<< HEAD
           <Route path='/' exact element={<FrontendLayout />}>
             <Route index element={<FrontendHome />} />
 
@@ -88,16 +106,39 @@ function App() {
 
 
 
+=======
+          <Route path='/' exact element={<FrontendLayout/>}>
+            <Route index element={<FrontendHome/>}/>
+            <Route path='About' element={<FrontendAbout/>}/>
+          </Route>
+
+          {/* //Admin Routes */}
+
+          <Route path='/admin' exact element={<BackendLayout/>}>
+            <Route index element={<BackendAdmin/>}/>
+            <Route path='settings' element={<BackendSetting/>}/>
+          </Route>
+
+
+>>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
           {/* //Super Admin Routes */}
 
           {/* <Route path='/superAdmin' exact element={<BackendLayout/>}>
             <Route index element={<BackendAdmin/>}/>
             <Route path='settings' element={<BackendSetting/>}/>
 
+<<<<<<< HEAD
           </Route> */}
 
 
           <Route path='*' element={<Error />} />
+=======
+
+          </Route> */}
+
+
+          <Route path='*' element={<Error/>}/>
+>>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
 
 
         </Routes>
