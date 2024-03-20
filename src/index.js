@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD
 import store from './components/redux/store';
 import { Provider } from 'react-redux';
 
 {/* <meta name="csrf-token" content="{{ csrf_token() }}"></meta> */}
+=======
+import { Provider } from 'react-redux';
+import store from './components/redux/store';
+
+<meta name="csrf-token" content="{{ csrf_token() }}"></meta>
+>>>>>>> apurbo
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

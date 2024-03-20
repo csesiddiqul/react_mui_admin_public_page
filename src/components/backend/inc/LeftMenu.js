@@ -3,10 +3,14 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
+<<<<<<< HEAD
 =======
 
 
@@ -17,6 +21,8 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
@@ -28,6 +34,9 @@ import ErrorIcon from '@mui/icons-material/Error';
 import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 import HomeIcon from '@mui/icons-material/Home';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
 import SearchIcon from '@mui/icons-material/Search';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
@@ -38,11 +47,14 @@ import {useAppStore} from "../../../appStore";
 
 import FolderSharedIcon from '@mui/icons-material/FolderShared';
 
+<<<<<<< HEAD
 =======
 
 import { useNavigate } from 'react-router-dom';
 import {useAppStore} from "../../../appStore";
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
 const drawerWidth = 240;
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -94,11 +106,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export default function LeftMenu() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   
 
 
 =======
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+  
+
+
+>>>>>>> apurbo
     const theme = useTheme();
     const navigate = useNavigate();
     const open = useAppStore((state)=> state.dopen);
@@ -109,21 +127,30 @@ export default function LeftMenu() {
 
       <CssBaseline />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
 
       <Drawer variant="permanent" open={open}>
         
         <DrawerHeader>
             কপিরাইট অফিস 
+<<<<<<< HEAD
 =======
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           Copyrightoffice BD
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
           <IconButton >
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
 
         <Divider />
 
@@ -153,10 +180,13 @@ export default function LeftMenu() {
                 </ListItemText>
             </ListItem>
 
+<<<<<<< HEAD
 =======
         <Divider />
         <List>
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
             <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/admin')}}>
               <ListItemButton
                 sx={{
@@ -175,6 +205,9 @@ export default function LeftMenu() {
                   <HomeIcon />
                 </ListItemIcon>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
                 <ListItemText  primary='ড্যাসবোর্ড'  sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
@@ -199,6 +232,7 @@ export default function LeftMenu() {
                 <ListItemText primary='নথি সন্ধান '  sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
+<<<<<<< HEAD
 =======
                 <ListItemText primary='Home'  sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
@@ -208,6 +242,8 @@ export default function LeftMenu() {
 
           
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
 
             <ListItem  disablePadding sx={{ display: 'block' }}  onClick={()=>{navigate('/admin/settings')}}>
               <ListItemButton
@@ -227,6 +263,9 @@ export default function LeftMenu() {
                   <SettingsApplicationsIcon />
                 </ListItemIcon>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
                 <ListItemText primary='সেটিং'  sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
@@ -291,14 +330,20 @@ export default function LeftMenu() {
                   <DynamicFeedIcon />
                 </ListItemIcon>
                 <ListItemText primary='ক্যাটাগরি'  sx={{ opacity: open ? 1 : 0 }} />
+<<<<<<< HEAD
 =======
                 <ListItemText primary='Settings'  sx={{ opacity: open ? 1 : 0 }} />
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
               </ListItemButton>
             </ListItem>
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
             <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/admin/attentions')}}>
               <ListItemButton
                 sx={{
@@ -321,9 +366,12 @@ export default function LeftMenu() {
             </ListItem>
 
             <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('admin/analytics')}}>
+<<<<<<< HEAD
 =======
             <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/analytics')}}>
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -341,10 +389,14 @@ export default function LeftMenu() {
                   <ErrorIcon />
                 </ListItemIcon>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <ListItemText primary='এরর'  sx={{ opacity: open ? 1 : 0 }} />
 =======
                 <ListItemText primary='Error'  sx={{ opacity: open ? 1 : 0 }} />
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+                <ListItemText primary='এরর'  sx={{ opacity: open ? 1 : 0 }} />
+>>>>>>> apurbo
               </ListItemButton>
             </ListItem>
 
@@ -367,15 +419,22 @@ export default function LeftMenu() {
                   <PublicIcon />
                 </ListItemIcon>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <ListItemText primary='পাবলিক পেজ'  sx={{ opacity: open ? 1 : 0 }} />
 =======
                 <ListItemText primary='Public Page'  sx={{ opacity: open ? 1 : 0 }} />
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+                <ListItemText primary='পাবলিক পেজ'  sx={{ opacity: open ? 1 : 0 }} />
+>>>>>>> apurbo
               </ListItemButton>
             </ListItem>
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
 
 
 
@@ -383,8 +442,11 @@ export default function LeftMenu() {
 
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
         </List>
 
       </Drawer>

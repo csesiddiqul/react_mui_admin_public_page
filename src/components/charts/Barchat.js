@@ -4,6 +4,9 @@ import { Chart } from "react-google-charts";
 export const data = [
   ["City", "2010 File", "2000 File"],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
   ["নতুন নথি", 8175000, 8008000],
   ["সম্পূর্ণ ফাইল", 3792000, 3694000],
   ["চলমান", 2695000, 2896000],
@@ -23,6 +26,7 @@ export const options = {
   },
 
   colors:["#2abba7","#1877f2","#188310"],
+<<<<<<< HEAD
 =======
   ["New File", 8175000, 8008000],
   ["Compleate File", 3792000, 3694000],
@@ -44,6 +48,8 @@ export const options = {
 
   colors:["rgb(53,138,148)","rgb(37,11,165)","#188310"],
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
 };
 
 export default function BarChart() {
@@ -52,9 +58,13 @@ export default function BarChart() {
       chartType="BarChart"
       width="90%"
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+    
+>>>>>>> apurbo
       
       data={data}
       options={options}

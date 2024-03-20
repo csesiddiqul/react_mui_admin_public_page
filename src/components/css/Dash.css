@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
 /* styles.css */
 
 
@@ -12,18 +15,25 @@
 }
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
 .paddingAll{
     /* padding: 10px; */
 }
 
 .fileTitle{
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-weight: 500;
 =======
     font-weight: 600;
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+    font-weight: 500;
+>>>>>>> apurbo
 }
 
 .fileSubTitle{
@@ -33,6 +43,7 @@
 .iconStyle{
     margin-top: 20px !important;
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin-bottom: 20px !important;
     color: #ECEFF1;
    
@@ -41,10 +52,16 @@
     color: aliceblue;
     
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+    margin-bottom: 20px !important;
+    color: #ECEFF1;
+   
+>>>>>>> apurbo
 }
 
 .iconStyleblack{
     margin-top: 20px !important;
+<<<<<<< HEAD
 <<<<<<< HEAD
     margin-bottom: 20px !important;
     color: #ECEFF1;
@@ -52,11 +69,19 @@
 =======
     margin-left: 20px !important;
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+    margin-bottom: 20px !important;
+    color: #ECEFF1;
+    
+>>>>>>> apurbo
     
 }
 
 .gradient{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> apurbo
     background: rgb(200, 232, 203);
     background: linear-gradient(158deg, #2abba7 0%,rgb(209, 209, 212)  100%);
 }
@@ -72,6 +97,7 @@
    
 }
 
+<<<<<<< HEAD
 =======
     background: rgb(40, 34, 70);
     background: linear-gradient(158deg,rgb(62 58 176) 0%, rgb(106, 109, 130)100%);
@@ -89,3 +115,5 @@
     background: linear-gradient(158deg,rgb(224,224,224) 0%, rrgb(233,237,254)100%)
 }
 >>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
+=======
+>>>>>>> apurbo
