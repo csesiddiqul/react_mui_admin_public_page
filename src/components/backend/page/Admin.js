@@ -6,21 +6,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
 import '../../css/Dash.css';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import SourceIcon from '@mui/icons-material/Source';
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
->>>>>>> apurbo
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import AccordionDash from '../inc/AccordionDash';
 import BarChart from '../../charts/Barchat';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> apurbo
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import PortraitIcon from '@mui/icons-material/Portrait';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
@@ -78,90 +67,36 @@ export default function Admin() {
             </Breadcrumbs>
 
           </div>
-<<<<<<< HEAD
-=======
-
-export default function Admin() {
-  const [openSidebar, setOpenSidebar] = useState(false);
-  return (
-      <>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
->>>>>>> apurbo
         <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={8} lg={8}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6} md={6} lg={6}>
-<<<<<<< HEAD
-<<<<<<< HEAD
               <Card sx={{  width: '100%' }} className='gradient'>
-=======
-              <Card sx={{ height: '30vh', width: '100%' }} className='gradient'>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-              <Card sx={{  width: '100%' }} className='gradient'>
->>>>>>> apurbo
                 <CardContent>
                   <div className='iconStyle'> 
                     <DriveFolderUploadIcon/>
                   </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> apurbo
                   <Typography gutterBottom variant="h5" component="div" className='text-black'>
                    20,23
                   </Typography>
                   <Typography variant="body2" component="div"  className='text-black'  color="text.secondary">
                     আজকের আবেদন
-<<<<<<< HEAD
-=======
-                  <Typography gutterBottom variant="h5" component="div"  sx={{color:'#ffffff'}}>
-                    200,12
-                  </Typography>
-                  <Typography variant="body2" component="div" sx={{color:'#ccd1e1'}} color="text.secondary">
-                      This Month File
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
->>>>>>> apurbo
                   </Typography>
                 </CardContent>
               </Card>
             </Grid>
             <Grid item xs={12} sm={6} md={6} lg={6}>
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <Card sx={{ width: '100%' }} className='gradientlight'>
-=======
-                <Card sx={{ height: '30vh', width: '100%' }} className='gradientlight'>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-                <Card sx={{ width: '100%' }} className='gradientlight'>
->>>>>>> apurbo
                   <CardContent>
                     <div className='iconStyle'>
                       <FolderOpenIcon/>
                     </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> apurbo
                     <Typography gutterBottom variant="h5" component="div" className='text-black'>
                       300,123
                     </Typography>
                     <Typography variant="body2" component="div" className='text-black'  color="text.secondary">
                       এ মাসের আবেদন
-<<<<<<< HEAD
-=======
-                    <Typography gutterBottom variant="h5" component="div"  sx={{color:'#ffffff'}}>
-                      300,123
-                    </Typography>
-                    <Typography variant="body2" component="div" sx={{color:'#ccd1e1'}} color="text.secondary">
-                        Total File
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
->>>>>>> apurbo
                     </Typography>
                   </CardContent>
                 </Card>
@@ -172,32 +107,14 @@ export default function Admin() {
         <Grid item xs={12} sm={6} md={4} lg={4}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12} md={12} lg={12}>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <Card sx={{ height: '78px', width: '100%' }} className='gradientlight'>
-=======
-            <Card sx={{ height: '14vh', width: '100%' }} className='gradientlight'>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-            <Card sx={{ height: '78px', width: '100%' }} className='gradientlight'>
->>>>>>> apurbo
               <CardContent>
                 <Stack direction='row' spacing={2}>
 
                     <div className='iconStyle'>
-<<<<<<< HEAD
-<<<<<<< HEAD
                      
                       <SaveAltIcon/>
                       
-=======
-                      <SourceIcon/>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-                     
-                      <SaveAltIcon/>
-                      
->>>>>>> apurbo
                     </div>
 
                     <div className='paddingAll'>
@@ -206,15 +123,7 @@ export default function Admin() {
                       </span>
                     <br/>
                       <span className='fileSubTitle' >
-<<<<<<< HEAD
-<<<<<<< HEAD
                         মোট ফাইল
-=======
-                        Total File
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-                        মোট ফাইল
->>>>>>> apurbo
                       </span>
                     </div>
                 </Stack>
@@ -222,51 +131,21 @@ export default function Admin() {
             </Card>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={12}>
-<<<<<<< HEAD
-<<<<<<< HEAD
             <Card sx={{ height: '78px', width: '100%'}} className='gradient'> 
-=======
-            <Card sx={{ height: '14vh', width: '100%'}}>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-            <Card sx={{ height: '78px', width: '100%'}} className='gradient'> 
->>>>>>> apurbo
               <CardContent>
                   <Stack direction='row' spacing={2}>
 
                       <div className='iconStyleblack'>
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <PortraitIcon/>
-=======
-                        <SourceIcon/>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-                        <PortraitIcon/>
->>>>>>> apurbo
                       </div>
 
                       <div className='paddingAll'>
                         <span className='fileTitle'>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> apurbo
                           103
                         </span>
                       <br/>
                         <span className='fileSubTitle'>
                           নতুন ব্যবহারকারী
-<<<<<<< HEAD
-=======
-                          2003
-                        </span>
-                      <br/>
-                        <span className='fileSubTitle'>
-                          File
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
->>>>>>> apurbo
                         </span>
                       </div>
                   </Stack>
@@ -285,15 +164,7 @@ export default function Admin() {
         <Grid item xs={12} md={8}>
           <Stack direction="row" spacing={2}>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
             <Card sx={{  width: '100%', padding:'30px 0px  10px 20px'}}>
-=======
-            <Card sx={{ height: '50vh', width: '100%', padding:'30px 0px  10px 20px'}}>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-            <Card sx={{  width: '100%', padding:'30px 0px  10px 20px'}}>
->>>>>>> apurbo
               <BarChart />
             </Card>
 
@@ -301,25 +172,11 @@ export default function Admin() {
         </Grid>
 
         <Grid item xs={12} md={4}>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> apurbo
           <Card sx={{  width: '100%' }}>
             <CardContent>
             <div className='paddingAll'>
               <span className='fileTitle' style={{margin:'10px 10px 20px 10px' , border:'1px'}}>
                 বর্তমান কার্যক্রম
-<<<<<<< HEAD
-=======
-          <Card sx={{ height: '60vh', width: '100%' }}>
-            <CardContent>
-            <div className='paddingAll'>
-              <span className='fileTitle'>
-              Most Use Menue
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
->>>>>>> apurbo
               </span>
             </div>
 

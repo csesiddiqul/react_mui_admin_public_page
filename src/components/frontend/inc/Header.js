@@ -1,10 +1,4 @@
 import React from 'react'
-<<<<<<< HEAD
-
-export default function Header() {
-  return (
-    <div>Header</div>
-=======
 import { Link } from 'react-router-dom'
 
 export default function Header() {
@@ -60,6 +54,5 @@ export default function Header() {
         </div>
       </header>
     </div>
->>>>>>> apurbo
   )
 }

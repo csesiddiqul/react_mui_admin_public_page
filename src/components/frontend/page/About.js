@@ -2,9 +2,6 @@ import React from 'react'
 
 export default function About() {
   return (
-<<<<<<< HEAD
-    <div>About</div>
-=======
   <div>
     <div className="breadcrumbs" data-stellar-background-ratio="0.5">
       <div className="container">
@@ -50,6 +47,5 @@ export default function About() {
     </section>
 </div>
 
->>>>>>> apurbo
   )
 }

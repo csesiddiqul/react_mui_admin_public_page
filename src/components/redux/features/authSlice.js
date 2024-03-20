@@ -16,6 +16,32 @@ export const loginUser = createAsyncThunk(
     }
 );
 
+
+// export const regUser = createAsyncThunk(
+//     "auth/regUser",
+//     async (regData, { rejectWithValue, fulfillWithValue }) => {
+//         try {
+//             // Perform the POST request to the login endpoint
+//             const response = await axios.post("http://127.0.0.1:8000/api/login", regData);
+//             // console.log("lllllllllllllllllll", response)
+//             // Return the response data upon successful login
+//             return fulfillWithValue(response.data);
+//         } catch (error) {
+//             // Return the error data upon encountering an error
+//             // You might want to handle different types of errors more explicitly here
+//             return rejectWithValue(error.response.data);
+//         }
+//     }
+// );
+
+
+
+
+
+
+
+
+
 const authSlice = createSlice({
     name: "auth",
     initialState: {
@@ -41,7 +67,6 @@ const authSlice = createSlice({
                 state.loading = false;
                 state.user = action.payload.user;
                 state.token = action.payload.token;
-                state.isLoggedIn = true;
                 state.message = action.payload.message || "success";
                 localStorage.setItem("token", action.payload.token);
             })
@@ -52,6 +77,9 @@ const authSlice = createSlice({
 
     }
 
+
 });
+
+
 
 export default authSlice.reducer;

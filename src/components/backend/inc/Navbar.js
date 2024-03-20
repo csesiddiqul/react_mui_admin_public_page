@@ -16,14 +16,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { useAppStore } from '../../../appStore';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
-=======
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-import { useNavigate } from 'react-router-dom';
->>>>>>> apurbo
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -44,23 +37,10 @@ const Search = styled('div')(({ theme }) => ({
 
 
 const AppBar = styled(MuiAppBar, {
-<<<<<<< HEAD
-<<<<<<< HEAD
-})(({ theme }) => ({
-  zIndex: theme.zIndex.drawer + 2,
-
-}));
-=======
-=======
->>>>>>> apurbo
   })(({  theme }) => ({
     zIndex: theme.zIndex.drawer + 2,
     
   }));
-<<<<<<< HEAD
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
->>>>>>> apurbo
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -86,39 +66,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-export default function Navbar({ setOpenSidebar }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const updateOpen = useAppStore((state) => state.updateOpen);
-  const navigate = useNavigate();
-
-  const dopen = useAppStore((state) => state.dopen || false);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/");
-  }
-=======
-=======
->>>>>>> apurbo
 export default function Navbar({setOpenSidebar}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const updateOpen = useAppStore((state)=> state.updateOpen);
-<<<<<<< HEAD
-=======
   const navigate = useNavigate();
->>>>>>> apurbo
 
   const dopen = useAppStore((state)=> state.dopen || false);
 
   console.log(dopen)
-<<<<<<< HEAD
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
->>>>>>> apurbo
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -132,14 +88,7 @@ export default function Navbar({setOpenSidebar}) {
   };
 
   const handleMenuClose = () => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
     
->>>>>>> apurbo
     setAnchorEl(null);
     handleMobileMenuClose();
   };
@@ -166,15 +115,7 @@ export default function Navbar({setOpenSidebar}) {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <MenuItem onClick={handleLogout}>Log out</MenuItem>
-=======
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
       <MenuItem onClick={()=>{navigate('/')}}>Log out</MenuItem>
->>>>>>> apurbo
     </Menu>
   );
 
@@ -209,15 +150,7 @@ export default function Navbar({setOpenSidebar}) {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-<<<<<<< HEAD
-<<<<<<< HEAD
           <Badge badgeContent={19} color="error">
-=======
-          <Badge badgeContent={17} color="error">
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-          <Badge badgeContent={19} color="error">
->>>>>>> apurbo
             <NotificationsIcon />
           </Badge>
         </IconButton>
@@ -240,15 +173,7 @@ export default function Navbar({setOpenSidebar}) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <AppBar position="fixed" elevation={0} sx={{ background: "#ffffff", color: "#2f2f2f" }}>
-=======
       <AppBar position="fixed" elevation={0} sx={{background:"#ffffff",color:"#2f2f2f"}}>
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-      <AppBar position="fixed" elevation={0} sx={{background:"#ffffff",color:"#2f2f2f"}}>
->>>>>>> apurbo
         <Toolbar>
           <IconButton
             size="large"
@@ -256,45 +181,19 @@ export default function Navbar({setOpenSidebar}) {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
-<<<<<<< HEAD
-<<<<<<< HEAD
-            onClick={() => { updateOpen(!dopen); setOpenSidebar(!dopen) }}
-          >
-            <MenuIcon />
-
-=======
-            onClick={()=>{updateOpen(!dopen);setOpenSidebar(!dopen)}}
-          >
-            <MenuIcon />
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
             onClick={()=>{updateOpen(!dopen);setOpenSidebar(!dopen)}}
           >
             <MenuIcon />
 
->>>>>>> apurbo
           </IconButton>
           <Typography
             variant="h6"
             noWrap
             component="div"
-<<<<<<< HEAD
-<<<<<<< HEAD
-            sx={{ display: { xs: 'none', sm: 'block' }, fontSize: '18px', fontWeight: 'bolde' }}
-          >
-            কপিরাইট অফিস
-
-=======
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
             sx={{ display: { xs: 'none', sm: 'block' }  , fontSize:'18px' , fontWeight:'bolde'}}
           >
             কপিরাইট অফিস
 
->>>>>>> apurbo
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -317,15 +216,7 @@ export default function Navbar({setOpenSidebar}) {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-<<<<<<< HEAD
-<<<<<<< HEAD
               <Badge badgeContent={19} color="error">
-=======
-              <Badge badgeContent={17} color="error">
->>>>>>> 1c128886bd5113c9234c63aca8f2f2f5601a6c77
-=======
-              <Badge badgeContent={19} color="error">
->>>>>>> apurbo
                 <NotificationsIcon />
               </Badge>
             </IconButton>

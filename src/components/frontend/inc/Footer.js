@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-export default function Footer() {
-  return (
-    <div>Footer</div>
-  )
-=======
 import React from 'react';
 import 'line-awesome/dist/line-awesome/css/line-awesome.min.css';
 import { FacebookRounded, LinkedIn, Twitter, YouTube } from '@mui/icons-material';
@@ -55,5 +47,4 @@ export default function Footer() {
       </footer>
     </div>
   );
->>>>>>> apurbo
 }
