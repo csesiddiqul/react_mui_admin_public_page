@@ -17,6 +17,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { useAppStore } from '../../../appStore';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -67,6 +68,22 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar({setOpenSidebar}) {
+
+  const handleLogout = () => {
+    // Clear the user login data from localStorage
+    localStorage.removeItem("isLogin");
+    localStorage.removeItem("authUser");
+    localStorage.removeItem("token");
+    // Navigate to the home page or any other desired route after logout
+    navigate('/');
+    toast.success("Login Successfully");
+    
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000); 
+
+  };
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const updateOpen = useAppStore((state)=> state.updateOpen);
@@ -74,7 +91,6 @@ export default function Navbar({setOpenSidebar}) {
 
   const dopen = useAppStore((state)=> state.dopen || false);
 
-  console.log(dopen)
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -115,7 +131,7 @@ export default function Navbar({setOpenSidebar}) {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={()=>{navigate('/')}}>Log out</MenuItem>
+      <MenuItem onClick={handleLogout}>Log out</MenuItem>
     </Menu>
   );
 

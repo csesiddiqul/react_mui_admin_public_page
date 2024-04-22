@@ -22,7 +22,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
 import { useNavigate } from 'react-router-dom';
-import {useAppStore} from "../../../appStore";
+import { useAppStore } from "../../../appStore";
 
 import FolderSharedIcon from '@mui/icons-material/FolderShared';
 
@@ -76,15 +76,24 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function LeftMenu() {
-  
+  const theme = useTheme();
+  const navigate = useNavigate();
+  const open = useAppStore((state)=> state.dopen);
+
+  // Define role permissions
+  const rolePermissions = {
+    'Super Admin': ['/', '/admin', '/admin/settings', '/admin/searchFile', '/admin/userList', '/admin/bankbranchs', '/admin/categories', '/admin/attentions', '/admin/analytics'],
+    'Admin': ['/', '/admin', '/admin/settings', '/admin/searchFile', '/admin/userList'],
+    // Add more roles and their permitted routes as needed
+  };
 
 
-    const theme = useTheme();
-    const navigate = useNavigate();
-    const open = useAppStore((state)=> state.dopen);
+  const userRoleString = localStorage.getItem("role");
+  const userRolejs = JSON.parse(userRoleString);
+  const userRole = userRolejs.name;
 
 
- return (
+  return (
     <Box sx={{ display: 'flex' }}>
 
       <CssBaseline />
@@ -102,229 +111,31 @@ export default function LeftMenu() {
 
 
         <List>
-
-            <ListItem>
-
-                <ListItemIcon
+          {menuItems.map((item) => (
+            // Check if the user's role has permission to access the current item
+            rolePermissions[userRole]?.includes(item.path) && (
+              <ListItem key={item.text} disablePadding sx={{ display: 'block' }} onClick={() => navigate(item.path)}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
+                    minHeight: 48,
+                    justifyContent: open ? 'initial' : 'center',
+                    px: 2.5,
                   }}
                 >
-                  <FolderSharedIcon sx={{ marginLeft: '6px' }} />
-                </ListItemIcon>
-
-                <ListItemText    sx={{ opacity: open ? 1 : 0 }} >
-                  <Box className='boxContainer'>
-                  সুপার এ্যাডমিন <br/>
-                  <span  style={{ fontSize: '12px' }} >
-
-                    পরিচালক 
-                  </span>
-                  </Box>
-                </ListItemText>
-            </ListItem>
-
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/admin')}}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <HomeIcon />
-                </ListItemIcon>
-                <ListItemText  primary='ড্যাসবোর্ড'  sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/admin/searchFile')}}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <SearchIcon />
-                </ListItemIcon>
-                <ListItemText primary='নথি সন্ধান '  sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem  disablePadding sx={{ display: 'block' }}  onClick={()=>{navigate('/admin/settings')}}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <SettingsApplicationsIcon />
-                </ListItemIcon>
-                <ListItemText primary='সেটিং'  sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/admin/userList')}}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <PersonSearchIcon />
-                </ListItemIcon>
-                <ListItemText primary='ইউজার '  sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/admin/bankbranchs')}}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <AccountBalanceIcon />
-                </ListItemIcon>
-                <ListItemText primary='ব্যাংক শাখা '  sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/admin/categories')}}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <DynamicFeedIcon />
-                </ListItemIcon>
-                <ListItemText primary='ক্যাটাগরি'  sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/admin/attentions')}}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <MarkEmailUnreadIcon />
-                </ListItemIcon>
-                <ListItemText primary='এটেনশন বার্তা'  sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('admin/analytics')}}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <ErrorIcon />
-                </ListItemIcon>
-                <ListItemText primary='এরর'  sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-            
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{navigate('/')}}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <PublicIcon />
-                </ListItemIcon>
-                <ListItemText primary='পাবলিক পেজ'  sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-
-
-
-
-
-
-
-
-
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : 'auto',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText primary={item.text} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            )
+          ))}
         </List>
 
       </Drawer>
@@ -332,3 +143,15 @@ export default function LeftMenu() {
     </Box>
   );
 }
+
+const menuItems = [
+  { text: 'ড্যাসবোর্ড', path: '/admin', icon: <HomeIcon /> },
+  { text: 'নথি সন্ধান', path: '/admin/searchFile', icon: <SearchIcon /> },
+  { text: 'সেটিং', path: '/admin/settings', icon: <SettingsApplicationsIcon /> },
+  { text: 'ইউজার', path: '/admin/userList', icon: <PersonSearchIcon /> },
+  { text: 'ব্যাংক শাখা', path: '/admin/bankbranchs', icon: <AccountBalanceIcon /> },
+  { text: 'ক্যাটাগরি', path: '/admin/categories', icon: <DynamicFeedIcon /> },
+  { text: 'এটেনশন বার্তা', path: '/admin/attentions', icon: <MarkEmailUnreadIcon /> },
+  { text: 'এরর', path: '/admin/analytics', icon: <ErrorIcon /> },
+  { text: 'পাবলিক পেজ', path: '/', icon: <PublicIcon /> },
+];

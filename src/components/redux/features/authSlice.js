@@ -1,85 +1,99 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import axios from "axios";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { postApi } from "../../../service/ApiService";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
+// Async action creator for logging in user
 export const loginUser = createAsyncThunk(
-    "auth/loginUser",
-    async (loginData, { rejectWithValue, fulfillWithValue }) => {
-        try {
-            const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/login`, loginData);
-
-            console.log(loginData);
-
-            return fulfillWithValue(response.data);
-        } catch (error) {
-            return rejectWithValue(error.response.data);
-        }
+  "auth/loginUser",
+  async (loginData, { rejectWithValue, fulfillWithValue }) => {
+    try {
+      const response = await postApi('/api/login', loginData);
+      return fulfillWithValue(response.data);
+    } catch (error) {
+      return rejectWithValue(error.response.data);
     }
+  }
 );
 
-
-// export const regUser = createAsyncThunk(
-//     "auth/regUser",
-//     async (regData, { rejectWithValue, fulfillWithValue }) => {
-//         try {
-//             // Perform the POST request to the login endpoint
-//             const response = await axios.post("http://127.0.0.1:8000/api/login", regData);
-//             // console.log("lllllllllllllllllll", response)
-//             // Return the response data upon successful login
-//             return fulfillWithValue(response.data);
-//         } catch (error) {
-//             // Return the error data upon encountering an error
-//             // You might want to handle different types of errors more explicitly here
-//             return rejectWithValue(error.response.data);
-//         }
-//     }
-// );
-
-
-
-
-
-
+// Async action creator for verifying OTP
+export const verifyOTP = createAsyncThunk(
+  "auth/verifyOTP",
+  async (otp, { rejectWithValue, fulfillWithValue }) => {
+    try {
+      const response = await postApi('/api/otp-submit', { otp });
+      return fulfillWithValue(response.data);
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 
 
 
 const authSlice = createSlice({
-    name: "auth",
-    initialState: {
-        loading: false,
-        token: "",
-        user: "",
-        message: "",
-        error: null,
+  name: "auth",
+  initialState: {
+    loading: false,
+    isLogin: false,
+    token: "",
+    user: "",
+    message: "",
+    error: null,
+    otpVerified: false, // Adding a state to track OTP verification status
+  },
+  reducers: {
+    logout(state) {
+      localStorage.removeItem("isLogin");
+      localStorage.removeItem("authUser");
+      localStorage.removeItem("token");
+      // Navigate to the home page or any other desired route after logout
+      state.isLogin = false;
+      state.token = "";
+      state.user = "";
+      toast.success("Login Successfully");
     },
-    reducers: {
-        logout() {
-            localStorage.removeItem("token");
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loginUser.pending, (state) => {
+        state.loading = true;
+        state.isLogin = false;
+        state.error = null; // Clear any previous error
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.isLogin = true;
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.message = action.payload.message || "success";
+        localStorage.setItem("token", action.payload.token);
+        localStorage.setItem("authUser", JSON.stringify(action.payload.user));
+        localStorage.setItem("role", JSON.stringify(action.payload.role));
+        localStorage.setItem("isLogin", true);
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.loading = false;
+        state.isLogin = false;
+        state.error = action.payload.error || "internal server error";
+      })
+      .addCase(verifyOTP.pending, (state) => {
+        state.loading = true;
+        state.error = null; // Clear any previous error
+      })
+      .addCase(verifyOTP.fulfilled, (state) => {
+        state.loading = false;
+        state.otpVerified = true; // Update OTP verification status
 
-        }
-    },
-    extraReducers: (builder) => {
 
-        builder.addCase(loginUser.pending, (state) => {
-            state.loading = true;
-        })
-
-            .addCase(loginUser.fulfilled, (state, action) => {
-                state.loading = false;
-                state.user = action.payload.user;
-                state.token = action.payload.token;
-                state.message = action.payload.message || "success";
-                localStorage.setItem("token", action.payload.token);
-            })
-
-            .addCase(loginUser.rejected, (state, action) => {
-                state.error = action.payload.error || "internal server error"
-            })
-
-    }
-
-
+      })
+      .addCase(verifyOTP.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.error || "The OTP you entered is incorrect.";
+      });
+  },
 });
 
-
+export const { logout } = authSlice.actions;
 
 export default authSlice.reducer;

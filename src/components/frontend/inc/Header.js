@@ -45,7 +45,7 @@ export default function Header() {
                     </ul>
                   </div>
                   <div className="button">
-                    <a href="login.html" className="btn white-bg mouse-dir">প্রবেশ করুন <span className="dir-part" /></a>
+                    <Link to="login" className="btn white-bg mouse-dir">প্রবেশ করুন <span className="dir-part" /></Link>
                   </div>
                 </nav>
               </div>
